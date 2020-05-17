@@ -12,7 +12,7 @@
 
 #  👉🏼 The firt button of Beers if you click you will see the Names of the beers, Description, if is Organic or not. 
 
-#  👉🏼 The seconnd button of Beers Location if you click you will see Beer city, Region and Locality.  
+#  👉🏼 The second button of Beers Location if you click you will see Beer city, Region and Locality.  
 
 
 
