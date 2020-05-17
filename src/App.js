@@ -1,5 +1,6 @@
 import React from "react";
 import { BrowserRouter as Router, Route } from "react-router-dom";
+import "bootstrap/dist/css/bootstrap.min.css";
 import { connect } from "react-redux";
 import BeerListContainer from "./component/BeerListContainer";
 import BeerLocationContainer from "./component/BeerLocationContainer";

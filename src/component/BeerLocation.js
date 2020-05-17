@@ -1,4 +1,5 @@
 import React from "react";
+import { Table } from "react-bootstrap";
 
 export default function BeerLocation(props) {
   if (!props.locations) {
@@ -7,22 +8,26 @@ export default function BeerLocation(props) {
     return "we don't have beer to show";
   } else {
     return (
-      <main className="ListBeer">
-        <h2 className="h1home">
-          These are the locations of the Beers you can search through:
-        </h2>
-        <div>
+      <Table striped bordered hover>
+        <thead>
+          <tr>
+            <th>Beer City</th>
+            <th>Region</th>
+            <th>Locality</th>
+          </tr>
+        </thead>
+        <tbody>
           {props.locations.map((location) => {
             return (
-              <p key={location.id}>
-                {location.name}
-                {location.streetAddress}
-                {location.locality}
-              </p>
+              <tr key={location.id}>
+                <td>{location.name}</td>
+                <td>{location.region}</td>
+                <td>{location.locality}</td>
+              </tr>
             );
           })}
-        </div>
-      </main>
+        </tbody>
+      </Table>
     );
   }
 }

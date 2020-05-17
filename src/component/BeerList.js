@@ -1,4 +1,5 @@
 import React from "react";
+import { Table } from "react-bootstrap";
 
 export default function BeerList(props) {
   if (!props.beers) {
@@ -7,21 +8,26 @@ export default function BeerList(props) {
     return "we don't have beer to show";
   } else {
     return (
-      <main className="ListBeer">
-        <h2 className="h1home">
-          These are the beers of Countrys you can search through:
-        </h2>
-        <div>
+      <Table striped bordered hover>
+        <thead>
+          <tr>
+            <th>Beer Name</th>
+            <th>Description</th>
+            <th>Organic</th>
+          </tr>
+        </thead>
+        <tbody>
           {props.beers.map((beer) => {
             return (
-              <p key={beer.id}>
-                {beer.name}
-                {beer.description}
-              </p>
+              <tr key={beer.id}>
+                <td>{beer.nameDisplay}</td>
+                <td>{beer.description}</td>
+                <td>{beer.isOrganic}</td>
+              </tr>
             );
           })}
-        </div>
-      </main>
+        </tbody>
+      </Table>
     );
   }
 }
